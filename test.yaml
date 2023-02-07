@@ -1,0 +1,49 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: tm-user
+spec:
+  containers:
+  - name: tm-user
+    image: aw52052001/tm-user
+    env:
+    - name: HOST_IP
+      valueFrom:
+        configMapKeyRef:
+          name: tm
+          key: host_ip
+    - name: HOST_port
+      valueFrom:
+        configMapKeyRef:
+          name: tm
+          key: host_port
+    - name: DB_DBNAME
+      valueFrom:
+        configMapKeyRef:
+          name: tm
+          key: db_dbname
+    - name: DB_USERNAME
+      valueFrom:
+        configMapKeyRef:
+          name: tm
+          key: db_username
+    - name: DB_PASSWORD
+      valueFrom:
+        configMapKeyRef:
+          name: tm
+          key: db_password
+    - name: DB_HOST
+      valueFrom:
+        configMapKeyRef:
+          name: tm
+          key: db_host
+    - name: DB_PORT
+      valueFrom:
+        configMapKeyRef:
+          name: tm
+          key: db_port
+    - name: AUTH_SECRET
+      valueFrom:
+        configMapKeyRef:
+          name: tm
+          key: auth_secret

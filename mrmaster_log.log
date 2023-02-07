@@ -1,0 +1,8 @@
+2023/01/18 09:58:14 main.go:32: test test 
+2023/02/02 14:21:30 C:/Three-months-project/main.go:35: test test 
+2023/02/06 17:12:03 /mnt/c/Three-months-project/main.go:35: test test 
+2023/02/06 17:12:03 /mnt/c/Three-months-project/main.go:46: err  listen tcp 127.0.0.1:80: bind: permission denied
+2023/02/06 17:13:05 /mnt/c/Three-months-project/main.go:35: test test 
+2023/02/07 11:04:14 /mnt/c/Three-months-project/main.go:35: test test 
+2023/02/07 11:04:15 /mnt/c/Three-months-project/main.go:46: err  listen tcp 127.0.0.1:80: bind: permission denied
+2023/02/07 11:04:30 /mnt/c/Three-months-project/main.go:35: test test 
