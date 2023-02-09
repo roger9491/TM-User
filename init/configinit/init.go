@@ -23,7 +23,6 @@ func init() {
 	err := godotenv.Load(os.ExpandEnv(projectRootPath + "/.env"))
 	if err != nil {
 		log.Printf("Error getting env %v\n", err)
-		return
 	}
 	
 	database.DBName = os.Getenv("DB_DBNAME")
