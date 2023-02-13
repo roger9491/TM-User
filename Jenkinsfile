@@ -16,7 +16,8 @@ pipeline {
         }
         stage('Test'){
             steps{
-                sh "docker run ${env.PROJECT}"
+                // 測試環境需使用docker ，使用掛載捲的方式
+                sh "docker run -it -v /var/run/docker.sock:/var/run/docker.sock ${env.PROJECT}"
                 sh 'docker system prune -a'
             }
         }
