@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
+	"log"
 	"net/http"
 	"net/http/httptest"
 	"testing"
@@ -13,13 +14,16 @@ import (
 	"tm-user/service/userservice"
 
 	"github.com/gin-gonic/gin"
+	"github.com/joho/godotenv"
 	"github.com/stretchr/testify/assert"
 )
 
 func TestPutUser(t *testing.T) {
-	// test
-	fmt.Printf("asdad\n")
-	userservice.UserRepo.Initialize(database())
+	err := godotenv.Load("../.env")
+	if err != nil {
+		log.Fatalf("Error getting env %v\n", err)
+	}
+	userservice.UserRepo.Initialize(database(t))
 
 	gin.SetMode(gin.TestMode)
 
